@@ -15,7 +15,7 @@ export default function Index() {
   return (
 
     <View style={styles.container}>
-      <Text style={styles.helloText}>This App is supposed to test the difficulties and the compatability of implementing a React Native Script with our main App</Text>
+      <Text style={styles.helloText}>This App is supposed to test the difficulties and the compatibility of implementing a React Native Script with our main App</Text>
       <Button
        onPress={handlePress}
       title="Increase the number of the counter by +1"
