@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ExpoRouter } from "expo-router";
-import { Text, View, StyleSheet, Button, Animated, TextInput } from "react-native";
+import { Text, View, StyleSheet, Button, Animated, TextInput, Alert } from "react-native";
 import LinearGradient from "react-native-linear-gradient"
+import { ScrollView } from "react-native-gesture-handler";
 
 
 export default function Index() {
@@ -59,8 +60,8 @@ export default function Index() {
   const handleCountStringChange = (text:string) => {
     const numericText = text.replace(/[^0-9]/g, '')
 
-    if (text !== numericText) {
-      alert("Invalid Input, please enter only numeric characters",)
+    if(text !== numericText) {
+      alert("Invalid Input, please enter only numeric characters.")
     }
     setCountString(numericText)
 
@@ -136,6 +137,7 @@ const styles = StyleSheet.create({
   label: {
     marginRight: 10,
     fontSize: 24,
+    fontWeight: "bold",
     bottom: -10
   }
 })
