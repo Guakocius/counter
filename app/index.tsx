@@ -15,7 +15,7 @@ export default function Index() {
     return color
   }
 
-  const [count, setCount] = useState(0)
+  let [count, setCount] = useState(0)
 
   const handlePressIncrease = () => {
     setCount(count + 1)
@@ -23,6 +23,10 @@ export default function Index() {
   
   const handlePressDecrease = () => {
     setCount(count -1)
+  }
+
+  const handlePressReset = () => {
+    setCount(count = 0)
   }
 
   const [backgroundColor, setBackgroundColor] = useState(getRandomColor())
@@ -48,8 +52,6 @@ export default function Index() {
 
   return (
 
-    
-
     <View style={[styles.container, {backgroundColor}]}>
       <Text style={styles.helloText}>This App is supposed to test the difficulties and the compatibility of implementing a React Native Script within our main App</Text>
       <Button
@@ -61,6 +63,11 @@ export default function Index() {
       onPress={handlePressDecrease}
       title="Decrease the number of the counter by -1"
       accessibilityLabel="Learn more about how the button changes the counter by -1"
+      />
+      <Button 
+      onPress={handlePressReset}
+      title="Resets the number of the counter"
+      accessibilityLabel="Learn more about how the button resets the counter"
       />
 
       <Text style={styles.countText}>Count: {count}</Text>
