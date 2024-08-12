@@ -6,20 +6,31 @@ import LinearGradient from "react-native-linear-gradient"
 
 export default function Index() {
 
+  const countIncrease = document.getElementById("countIncrease")
+
   const [count, setCount] = useState(0)
 
-  const handlePress = () => {
+  const handlePressIncrease = () => {
     setCount(count + 1)
+  }
+  
+  const handlePressDecrease = () => {
+    setCount(count -1)
   }
 
   return (
 
     <View style={styles.container}>
-      <Text style={styles.helloText}>This App is supposed to test the difficulties and the compatibility of implementing a React Native Script with our main App</Text>
+      <Text style={styles.helloText}>This App is supposed to test the difficulties and the compatibility of implementing a React Native Script within our main App</Text>
       <Button
-       onPress={handlePress}
+       onPress={handlePressIncrease}
       title="Increase the number of the counter by +1"
       accessibilityLabel="Learn more about how the button changes the counter by +1"
+      />
+      <Button 
+      onPress={handlePressDecrease}
+      title="Decrease the number of the counter by -1"
+      accessibilityLabel="Learn more about how the button changes the counter by -1"
       />
 
       <Text style={styles.countText}>Count: {count}</Text>
